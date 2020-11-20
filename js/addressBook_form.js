@@ -1,42 +1,42 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  const name = document.querySelector('#name');
+  const name = document.querySelector('#name'); 
   const textError = document.querySelector('.name-error');
   name.addEventListener('input', function () {
     let names = document.querySelector('#name').value.split(" ");
-    if (name.value.length == 0) {
+    if(name.value.length == 0){
       textError.textContent = "";
       return;
-    }
-    try {
+  }
+  try{
       (new Contact()).firstName = names[0];
       (new Contact()).lastName = names[1];
       textError.textContent = "";
-    } catch (e) {
+  }catch(e){
       textError.textContent = e;
-    }
+  }
   });
 
   const addressElement = document.querySelector('#address');
   const addressError = document.querySelector('.address-error');
-  addressElement.addEventListener('input', function () {
+  addressElement.addEventListener('input', function() {
     let address = document.querySelector('#address').value;
-    try {
+    try{
       (new Contact()).address = address;
       addressError.textContent = ""
-    } catch (e) {
+    }catch(e){
       addressError.textContent = e;
     }
   });
 
   const phoneElement = document.querySelector('#phone');
   const phoneError = document.querySelector('.phone-error');
-  phoneElement.addEventListener('input', function () {
+  phoneElement.addEventListener('input', function() {
     let phone = document.querySelector('#phone').value;
-    try {
+    try{
       (new Contact()).phone = phone;
       phoneError.textContent = "";
-    } catch (e) {
+    }catch(e){
       phoneError.textContent = e;
     }
 
@@ -44,12 +44,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   const emailElement = document.querySelector('#email');
   const emailError = document.querySelector('.email-error');
-  emailElement.addEventListener('input', function () {
+  emailElement.addEventListener('input', function() {
     let email = document.querySelector('#email').value;
-    try {
+    try{
       (new Contact()).email = email;
       emailError.textContent = "";
-    } catch (e) {
+    }catch(e){
       emailError.textContent = e;
     }
 
@@ -77,17 +77,17 @@ const createContact = () => {
   return contactData;
 }
 
-function createAndUpdateStorage(contactData) {
+function createAndUpdateStorage(contactData){
   let contactList = JSON.parse(localStorage.getItem("ContactList"));
 
-  if (contactList != undefined) {
-    contactList.push(contactData);
+  if(contactList != undefined){
+      contactList.push(contactData);
   }
-  else {
-    contactList = [contactData];
+  else{
+      contactList = [contactData];
   }
   alert(contactList.toString());
-  localStorage.setItem("ContactList", JSON.stringify(contactList));
+  localStorage.setItem("ContactList",JSON.stringify(contactList));
 }
 
 const getInputValueById = (id) => {
@@ -96,21 +96,21 @@ const getInputValueById = (id) => {
 }
 
 const resetForm = () => {
-  setValue('#name', '');
-  setValue('#address', '');
-  setSelectedIndex('#city', 0);
-  setSelectedIndex('#state', 0);
-  setValue('#zip', '');
-  setValue('#phone', '');
-  setValue('#email', '');
+    setValue('#name','');
+    setValue('#address','');
+    setSelectedIndex('#city',0);
+    setSelectedIndex('#state',0);
+    setValue('#zip','');
+    setValue('#phone','');
+    setValue('#email','');
 }
 
-const setValue = (id, value) => {
+const setValue = (id,value) => {
   const element = document.querySelector(id);
   element.value = value;
 }
 
-const setSelectedIndex = (id, index) => {
+const setSelectedIndex = (id,index) => {
   const element = document.querySelector(id);
   element.selectedIndex = index;
 }

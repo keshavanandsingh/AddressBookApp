@@ -42,13 +42,24 @@ window.addEventListener('DOMContentLoaded',(event) => {
   const createContactJSON = () => {
     let contactListLocal = [
     {
-        _firstName: "Keshavanand",
-        _lastName: "Singh",
-        _address: "lakhibagh manpur gaya",
-        _city: "Gaya",
-        _phone: "8292826716",
-        _state: "Bihar",
-        _zip: "823003",
+        _firstName: "Anthony",
+        _lastName: "Stark",
+        _address: "10001 Malibu Point",
+        _city: "New York City",
+        _email: "tonystark@gmail.com",
+        _phone: "9876543210",
+        _state: "New York",
+        _zip: "10002",
+    },
+    {
+        _firstName: "Steve",
+        _lastName: "Rogers",
+        _address: "569 Leaman Place Brooklyn Heights",
+        _city: "New York City",
+        _email: "steverogers@Outlook.com",
+        _phone: "4567876576",
+        _state: "New York",
+        _zip: "53540",
     }
     ];
     return contactListLocal;
